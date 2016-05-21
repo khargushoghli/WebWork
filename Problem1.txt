@@ -6,7 +6,7 @@
 ## KEYWORDS('mathematical models','problem solving','formulas','algebra')
 ## Date: 2007/09
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT(); 
 
 loadMacros(
   "PGstandard.pl",

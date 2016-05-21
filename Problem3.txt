@@ -3,7 +3,7 @@
 ##ENDDESCRIPTION
 
 ## KEYWORDS('algebra', 'factoring')
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
 "PG.pl",

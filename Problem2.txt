@@ -1,0 +1,61 @@
+##DESCRIPTION
+## Problem2('')
+## KEYWORDS('mathematical models','problem solving','formulas','algebra')
+## Date: 2007/09
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "CofIdaho_macros.pl"
+);
+
+TEXT(beginproblem());
+
+######################################
+#  Setup
+@numbers = ("twice", "three times", "four times", "five times");
+$times = random(1, 4, 1);
+$answer = random(5,10,1);
+$a = random(3,2*$answer,1);
+$b = 2*(($times+1)*$answer - $a) + 2*$answer;  #xxxx
+
+
+######################################
+#  Main text
+
+BEGIN_TEXT
+The length of a rectangular pool is $a meters less than $numbers[$times - 1] the
+width.  If the pool's perimeter is $b meters, what is the width?
+$PAR
+a) Write an equation to model the problem.  Use $BITALIC x $EITALIC to
+represent the width of the pool.
+$BR
+Answer: \{ans_rule(20) \}
+$PAR
+b) How many meters wide is the pool?
+$BR
+Answer: \{ans_rule(20) \}
+
+END_TEXT
+
+######################################
+#  Answers
+#  Note:  This should been to be changed whenever an Equation
+#         MathObject is written or a better equation checker is written.
+
+$ans_a = "$b = ($times + 1)*(2*x-$a) + 2*x";
+ANS(Picky_equation_cmp($ans_a));
+
+$ans_b = $answer;
+$units = "m";
+ANS(num_cmp($ans_b));
+
+$showPartialCorrectAnswers = 1;
+
+######################################
+
+
+
+ENDDOCUMENT();
